@@ -20,31 +20,3 @@ Well first of all I think it's going to be a wild ride.  Watching the video with
 I think that it will be extremely important for me to remind myself that I am responsible for learning and taking advantage of the opportunities/ resources that DBC provides.  I think this is one of the places where my expectations have gradually changed and I really like the fact that I am expecting to have so much more agency and responsibility when it comes to my experience at DBC.
 
 I couldn't be more excited to participate in this learning environment and have become increasingly excited as I have been noticing the incremental improvements of my understanding of CLI and git/github this week.  Can't wait to start on html next week!
-
-
-
-Paragraph 2
-
-Paragraph 3
-
-Add as many paragraphs as you want!!!
-
-Notes:
-Whatever happens is up to us
-in it together
-it becomes hard to remember this
-it is still a huge experiment -- everyone that walks through the door should understand this
-still far from being as awesome as it could be
-make it awesome
-creator mode instead of consumer mode
-kitchen not the restaurant get messy, make stuff, make it what I want it to be
-
-imposter syndrome
-welcome the fears and worries
-
-
-
-
-
-
-
