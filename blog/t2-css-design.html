@@ -1,0 +1,109 @@
+http://css-tricks.com/absolute-relative-fixed-positioining-how-do-they-differ/
+https://developer.mozilla.org/en-US/docs/Web/CSS/position
+http://www.vanseodesign.com/css/css-positioning/
+
+
+Static: This is the default value for all elements. Note, that because position does not cascade from a parent element to a child element, this guarantees that unless otherwise set, an element will always have a static position. Static just means that the element will fall into the flow of other elements on the page normally. You would rarely set an element to static because it is already the default and can't be changed through inheritance/cascading.
+
+As you can see in the example below the red div box has not had its position set to anything and therefore defaults to a position: static.
+
+Example HTML:
+<!DOCTYPE HTML>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="stylesheet.css">
+  <title></title>
+</head>
+<body>
+  <div id="wrapper">
+    <div id="relDiv">
+    This div does not have its position set to anything (therefore it defaults to be static).
+    </div>
+  </div>
+</body>
+</html>
+
+Example CSS:
+#wrapper {
+  height: 400px;
+  width: 800px;
+  border: 2px black solid;
+}
+
+
+#relDiv {
+  height: 200px;
+  width: 200px;
+  background-color: red;
+  border: 2px black solid;
+}
+
+Relative:  With this position setting you can alter the location of the element relative to where it would be if its position were set to static.  As you can see with the example below I set it to be top: 30px; and left: 80px; which means that its top will be pushed down 30 pixels and its left side will be pushed 80 pixels to the right of where it would have been positioned if it were static.
+
+One nuance of setting position relative is that the other elements in the flow act like the element with relative position is still in its normal position, not, say 30px down and 80px left.
+
+Example HTML:
+<!DOCTYPE HTML>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="stylesheet.css">
+  <title></title>
+</head>
+<body>
+  <div id="wrapper">
+    <div id="relDiv">
+    This div has position: relative.
+    </div>
+  </div>
+</body>
+</html>
+
+Example CSS:
+#wrapper {
+  height: 400px;
+  width: 800px;
+  border: 2px black solid;
+}
+
+
+#relDiv {
+  height: 200px;
+  width: 200px;
+  background-color: red;
+  border: 2px black solid;
+  position: relative;
+  top: 30px;
+  left: 80px;
+}
+
+Absolute: Absolute positioning is an interesting one. It allows you to position your element relative to its closest parent element that also has relative or absolute positioning. If the element has no parent with relative or absolute positioning then it is positioned relative to the html element.
+
+One thing to be careful with is that elements with absolute positioning are removed from the flow of the elements and are not only not affected by the other elements in the flow but they also no longer affect elements in the flow.  That means that you can't count on an absolute positioned element to push that div that's next to it over to the right, etc.
+
+Fixed: Fixed positioning basically glues the element to the position you determine relative to the html element.  The effective result of this is gluing the element to some part of the screen and no matter how much you scroll it will never move.  This can have a cool for headers or sidebars but can also take up a lot of screen real estate so use it cautiously.
+
+
+
+ Example CSS:
+
+ #wrapper {
+  height: 400px;
+  width: 800px;
+  border: 2px black solid;
+}
+
+
+#relDiv {
+  height: 200px;
+  width: 200px;
+  background-color: red;
+  border: 2px black solid;
+  position: absolute;
+  top: 500px;
+  left: 100px;
+}
+
+Fixed:  Elements with fixed position have their position fixed relative to the browser screen. That means that no matter how much you scroll or expand or contract the browser window the element will remain fixed relative to the browser window. This can create a neat effect when used for things like headers or sidebars but you should use it carefully because it can also take up valuable screen real estate.
+
+
+Inherit:  Although position is not normally inherited by children elements, you can set an element to inherit its position property by setting position: inherit;

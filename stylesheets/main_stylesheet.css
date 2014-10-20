@@ -1,147 +1,166 @@
 body {
+  background-color: #CCCBBB;
+  font-family: Tahoma, Geneva, sans-serif;
+  color: #323232;
+}
+
+#wrapper {
+  max-width: 940px;
+  margin: 0px auto;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+nav {
+  background-color: #00ABFF;
+  display: block;
+  text-align: center;
+  /*overflow: hidden;*/
+  border-bottom: 2px grey solid;
+}
+
+nav ul {
   margin: 0px;
-  background-color: #1485CC;
-  color: black;
-  font-family: sans-serif;
-  height: 100%;
-  width: 100%;
-  text-align: center;
+  padding: 0px;
 }
 
-ul {
+nav ul li {
   list-style-type: none;
+  display: inline-block;
 }
 
-#header {
-  top: 0px;
-  width: 100%;
-  height: 150px;
-  border-bottom: 1px black solid;
-  background-color: #FF0000;
-  padding-top: 15px;
-}
-
-.headerButton:hover {
-  background-color: #FFFC19;
-}
-
-a:link {
+nav ul li a {
+  display: block;
+  font-size: 35px;
+  padding: 15px 20px 15px 20px;
   text-decoration: none;
-  color: black;
+  color: #4A4A47;
 }
 
-a:visited {
-  text-decoration: none;
-  color: black;
+#currentPage {
+  color: #D5EDFF;
 }
 
-#currentTab {
-  background-color: #FFFC19;
+nav ul li a:hover {
+  color: Black;
+  /*
+  Messing around with the hover to make it look like it's 3-D but it pushes the header down a bit
+
+  border-left: 1px solid #FF1932;
+  border-top: 1px solid #FF1932;
+  border-right: 4px solid #FF1932;
+  border-bottom: 4px solid #FF1932;*/
 }
 
-#headerLogoDiv{
-  position: absolute;
-  display: block;
-  width: 10%;
-  height: auto;
-  text-align: center;
+main {
+  background-color: #FFFFF4;
 }
 
-#headerLogo {
-  width: 70%;
-  height: auto;
-}
-
-.headerButton {
-  float: right;
+#intro {
+  position: relative;
+  bottom: 370px;
+  margin-left: 50px;
   display: inline-block;
-  width: 10%;
-  padding: 50px 15px 50px 15px;
-  margin: 0px 0px 0px 0px;
-  text-align: center;
-}
-
-.projectBox{
-  background-color: #FFFC19;
-  border-radius: 4px;
-  display: block;
-  width: 60%;
-  height: 55%px;
-  border: 1px solid black;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 20px;
-  text-align: center;
-}
-
-.aboutBox{
-  background-color: #FFFC19;
-  border-radius: 4px;
-  display: block;
-  width: 60%;
-  height: 55%px;
-  border: 1px solid black;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 20px;
-  margin-bottom: 160px;
-  text-align: center;
-}
-
-.aboutBox p {
-  padding-left: 30px;
-  padding-right: 30px;
+  width: 300px;
   text-align: left;
+  margin-right: 20px;
 }
 
-.aboutBox ul {
-  padding-left: 30px;
-  padding-right: 30px;
+#introAbout {
+  position: relative;
+  bottom: 270px;
+  margin-left: 50px;
+  display: inline-block;
+  width: 300px;
   text-align: left;
+  margin-right: 20px;
 }
 
-.projectBox p {
-  padding-left: 30px;
-  padding-right: 30px;
+#mainPicDiv {
+  display: inline-block;
+  margin: 100px 20px 50px 20px;
+  top: 100px;
 }
 
-.projectPhoto {
-  display: block;
-  width: 500px;
-  height: auto;
-  margin-right: auto;
-  margin-left: auto;
+#mainPicDiv h6 {
+  margin-top: 10px;
 }
 
-.socialMediaBox{
-  background-color: #FFFC19;
+#mainPicDiv img {
+  height: 450px;
   border-radius: 4px;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.blogPost {
+  padding-left: 20px;
+  padding-right: 20px;
   display: inline-block;
-  width: 60%;
-  height: 400px;
-  border: 1px solid black;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 20px;
-  margin-bottom: 353px;
-  text-align: center;
+  margin-bottom: 75px;
 }
 
-footer {
-  border-top: 1px black solid;
-  background-color: #FF0000;
-  width: 100%;
-  height: 20px;
-  margin-top: 20px;
-  text-align: center;
-  padding-top: 5px;
-  display: fixed;
-  bottom: 0px;
+.blogPost p {
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-right: 20px;
 }
 
-.socialIcon {
+.blogImageDiv{
+  position: relative;
+  left: 50px;
+  overflow: none;
+}
+
+.blogImageDiv img {
+  height: 350px;
+  border-radius: 4px;
+  border: 2px grey solid;
+}
+
+.blogImgLabel {
+  font-size: 12px;
+  padding-right: 20px;
+  margin-right: 30px;
+  width: 700px;
+}
+
+#constructionDiv {
+  text-align: center;
+  padding-top: 300px;
+  padding-bottom: 300px;
+  font-size: 20px;
+}
+
+#socialBar {
+  background-color: #FFFFF4;
+  text-align: center;
+  border-bottom: 2px grey solid;
+  display: block;
+  overflow: hidden;
+}
+
+#socialBar h2 {
+  padding-bottom: 15px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+#socialBar ul {
+  margin: 0px;
+  padding: 0px;
+}
+
+#socialBar ul li {
+  list-style-type: none;
   display: inline-block;
-  margin: 10px;
-  float: left;
+  margin: 0px 60px;
 }
 
+footer{
+  padding: 10px 0px 5px 20px;
+  background-color: #00ABFF;
+  display: block;
+}
