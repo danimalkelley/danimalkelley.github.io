@@ -1,0 +1,79 @@
+
+<!DOCTYPE HTML>
+
+<html>
+
+  <head>
+    <link rel="stylesheet" type="text/css" href="">
+    <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
+  </head>
+
+  <body>
+    <div class="container">
+
+      <div class="header">
+        <h1>An Introduction to Pair Programming</h1>
+        <h3>By Mike and Daniel</h3>
+      </div>
+
+      <div class="content">
+
+        <div class="article">
+          <h2>Arrays vs. Hashes</h2>
+
+          <p>First I'll talk a bit about arrays and then I'll get into hashes.  Basically arrays are numbered lists where each number is associated with a slot that acts like a variable. Each slot can be assigned a value such as an integer, a string, a float, etc. Below is a simple example of an array.</p>
+
+          <pre class="prettyprint lang-ruby">
+            simple_array = ['first_entry', 'second_entry', 'third_entry']
+          </pre>
+
+          <p>Unlike arrays, hashes are not ordered and instead are lists of keys and values associated with each key. For example you might use a hash to keep track of countries and which continent they are on.  The name of the country would be the key and the value would be the continent it is on. Below is an example of a hash like that.</p>
+
+          <pre class="prettyprint lang-ruby">
+            simple_hash = {
+            'USA' => 'North America',
+            'Colombia' => 'South America',
+            'Cambodia' => 'Asia',
+            'France' => 'Europe'
+          }
+          </pre>
+
+          <p>As you might have figured out arrays are best when you want your list to be in numeric order and when there is only one value per entry that you'd like to add such as players on the 49ers. Hashes are better when you have a list where you want to associate a key with a value such as players on the 49ers AND their position--Note in this example the key value would be the player's name and the value would be the player's position because key values must be unique.</p>
+
+          <p>Other Tips: When a hash is empty (hash_examp = {}) it has a value of nil.  This is the default. You can, however, set this to be another value by writing the following: ????????
+
+            Another trick is that you can create both nested arrays and nested hashes.  Please see the examples below.</p>
+
+            <pre class="prettyprint lang-ruby">
+            simple_hash = {
+            'Colombia' => {'Continent' => 'South America', 'Official Language' => 'Spanish', 'Population in millions' => 48.32},
+            'Cambodia' => {'Continent' => 'Asia', 'Official Language' => 'Khmer', 'Population in millions' => 15.14},
+            'France' => {'Continent' => 'Europe', 'Official Language' => 'French', 'Population in millions' => 66.03}
+          }
+          </pre>
+
+        </div>
+
+        <div class="article">
+          <h2>Why is pair programming important to DBC?</h2>
+
+          <p>Pair Programming, as far as I can tell (I'm only in week 3) is integral aspect to DBC. This makes a lot of sense to me because DBC emphasizes learning from your peers and pairing is a great way to do this. Furthermore, DBC stresses the process of teaching to cement your understanding of a concept--which defintiely happens in pairing sessions.  DBC also uses pairing sessions as a way to build engineering empathy within its Boots.</p>
+         </div>
+
+        <div class="article">
+          <h2>Comparison of Driver and Navigator Roles</h2>
+
+          <p>I see the role of the Navigator as the teammate who keeps a higher level view of the project or problem and might even keep an eye on what is coming up ahead. They can also perform research on a topic if the driver has stuff to work on. For remote pairing sessions the navigator can also be in charge of running the code on their location machine periodically. I see the driver as the person who is more in the trenches of the code working on the syntax and just putting everything down in the Text Editor. If stuck with something the driver can also just test some ideas out while the navigator reads about the issue online.</p>
+        </div>
+
+      </div>
+
+    </div>
+  </body>
+
+</html>
+
+
+
+
+
