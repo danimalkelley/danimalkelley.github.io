@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="../stylesheets/main_stylesheet.css">
+    <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
+    <title>Daniel Kelley - Blog - Enumerable Methods</title>
+</head>
+<body>
+  <div id="wrapper">
+    <nav>
+      <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../about.html">About</a></li>
+        <li><a id="currentPage" href="blog-home.html">Blog</a></li>
+        <li><a href="../projects.html">Projects</a></li>
+      </ul>
+    </nav>
+    <main>
+      <div class="content">
+        <div class="blogArticle">
+          <h2>Enumerable Methods: map, group_by, and cycle</h2>
+          <h4>October 28, 2014</h4>
+          <p>Today I'm going to write a little bit about Enumerable methods and then go over the map, group_by, and cycle methods in a bit more detail.</p>
+          <h3>What are these things??</h3>
+          <p>The Enumerable Module is basically a group of Ruby methods (called Enumerable Methods) that are handily prebuilt and included in Ruby. The catch is that enumerable methods can only be used on certain classes. The basic rule of thumb is that you can use Enumerable methods on a class if that class has a .each method. This makes sense because Enumerable methods tend to cycle through the object they are called on and do something--just like the each method.</p>
+          <h3>Map</h3>
+          <p>Map basically goes through the object it is called on, let's say an array and does the something you tell it to do to each element in the array. Let's look at an example:</p>
+
+          <pre class="prettyprint lang-ruby">
+            demoArray = [1, 3, 5, 3, 2, 1]
+
+            demoArray.map{|elem| (elem*2)+5} #==> returns [7, 11, 15, 11, 9, 7]
+
+            demoArrayStrings = ['San Francisco', 'Los Angeles', 'Detroit', 'London']
+
+            demoArrayStrings.map{|city| city + " is a city."} #==> returns ['San Francisco is a city', 'Los Angeles is a city', 'Detroit is a city', 'London is a city']
+          </pre>
+
+          <p>So as you can see map is great if you want to do the same thing to each element in the object you call it on.</p>
+
+          <h3>Group_by</h3>
+          <p>As you might have guessed .group_by is great for grouping the object you call it on by something. You could use it to group an array of numbers by if they are greater than 3 or their %3. Let's look at an example</p>
+
+          <pre class="prettyprint lang-ruby">
+            demoArray = [1, 3, 5, 3, 2, 1]
+            #Groups the elements of the input array based on if their values are equal to one.  Returns a hash with true and false as the keys and arrays of the grouped elements as the values.
+            demoArray.group_by{|element| element == 1} #==> returns {true=>[1,1], false=>[3, 5, 3, 2]}
+
+            demoArrayStrings = ["daniel", "john", "ben", "lisa"]
+            #Groups the strings in the input array based on if they have an even or odd number of letters.  Returns a hash as the output.
+            demoArrayStrings.group_by{|name| name.length%2} #==> {0=>["daniel", "john", "lisa"], 1=>["ben"]}
+          </pre>
+
+          <h3>.cycle</h3>
+          <p>Cycle allows you to cycle through an object (such as an array or a hash) as many times as you want and do something with it. If you do not pass it a number of times you want it to cycle it will cycle forever.</p>
+
+          <pre class="prettyprint lang-ruby">
+            demoArray = [1, 3, 5, 3, 2, 1]
+            demoArray.cycle(2){|num| puts num*2} #==> prints 2, 6, 10, 6, 4, 2, 2, 6, 10, 6, 4, 2
+
+            demoArray = [1, 3, 5, 3, 2, 1]
+            demoArray.cycle{|num| puts num*2} #==> prints 2, 6, 10, 6, 4, 2, 2, 6, 10, 6, 4, 2....and on and on and on for-ev-er
+          </pre>
+
+        </div>
+      </div>
+    </main>
+    <div id="socialBar">
+      <h2>Get in touch below</h2>
+      <ul>
+        <li><a href="https://twitter.com/danielkelley123"><img src="../imgs/socialIcons/twitter/twitter-64-black.png"></a></li>
+        <li><a href="https://plus.google.com/u/0/116356355707690454484/posts"><img src="../imgs/socialIcons/googleplus/googleplus-64-black.png"></a></li>
+        <li><a href="https://news.ycombinator.com/user?id=keyboardperro"><img src="../imgs/socialIcons/hackernews/hackernews-64-black.png"></a></li>
+        <li><a href="https://github.com/danimalkelley/"><img src="../imgs/socialIcons/github/github-64-black.png"></a></li>
+      </ul>
+    </div>
+    <footer>
+      Daniel Kelley - Dev Bootcamp - Desert Rabbits Cohort
+    </footer>
+  </div>
+</body>
+</html>
