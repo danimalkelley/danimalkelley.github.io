@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="../stylesheets/main_stylesheet.css">
+    <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
+    <title>Daniel Kelley - Ruby Classes</title>
+</head>
+<body>
+  <div id="wrapper">
+    <nav>
+      <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../about.html">About</a></li>
+        <li><a id="currentPage" href="blog-home.html">Blog</a></li>
+        <li><a href="../projects.html">Projects</a></li>
+      </ul>
+    </nav>
+    <main>
+      <div class="content">
+        <div class="blogArticle">
+          <h2>Ruby Classes</h2>
+          <h4>November 8, 2014</h4>
+          <p>In this post I'll begin by discussing what classes are and how they are used in Ruby. I will then give an example of how you might use classes to model some real world objects and will also discuss some other tips and tricks.</p>
+          <p>As Ruby is an Object Oriented Language, the most important element in things are objects. Ruby uses objects to store data and do things with that data. Classes are useful in that they provide a blueprint for creating many objects that share the same blueprint. This does not mean that all objects of a certain class have to be identical-they don't-it just means that they share the same basic structure and can do the same basic actions, or methods.</p>
+          <p>Let's do an example. Let's say we want to model dogs. So we would create the class Dog (classes in Ruby are capitalized).  When we create an instance of the Dog class (meaning that we are creating an object based on the Dog class blueprint) we want to give it a breed, weight, name, color, and favorite chew toy. </p>
+
+          <pre class="prettyprint lang-ruby">
+            class Dog
+              def initialize(breed, weight, name, color, chew_toy)
+                @breed = breed
+                @weight = weight
+                @name = name
+                @color = color
+                @chew_toy = chew_toy
+              end
+
+              def bark
+                puts "Woof! My name is #{@name}."
+              end
+
+              def fetch
+                puts "Thanks for throwing my #{@chew_toy}.  Throw it again please!!!"
+              end
+            end
+
+            my_dog = new.Dog("English Springer Spaniel", 35, "Eloise", "Black and White", "Rubber Mailman")
+            my_dog.fetch
+
+          </pre>
+
+          <p>As you can see above after I defined the class, I defined a method called Initalize which accepts all of the parameters that we talked about (breed, weight, name, color, chew_toy). The job of this method is to create a new dog object whenever we call Dog.new and to create instance variables (variables that start with a @ and are accessible to all methods of an object) using the arguments we passed in. After that I defined another method that is accessible to all objects of class Dog called Bark that puts "Woof! My name is #{@name}." where @name points to that dog's name. I then created another method called fetch that puts "Thanks for throwing my #{@chew_toy}. Throw it again please!!!" where @chew_toy is that dog's favorite chew toy. If you run just that code you'll realize it doesn't do anything. Why is that? It is because we haven't created any objects yet! To create an instance of class dog I typed my_dog = new.Dog("English Springer Spaniel", 35, "Eloise", "Black and White", "Rubber Mailman") which creates a new dog object with the arguments passed in and sets it to the variable my_dog. To actually print something to the log, however, you have to call a method on the new object my_dog which you can see on the last line.</p>
+          <p>Now that you've got a brief overview let's go over some tips and tricks.  First, you can use inheritance with classes.  Let's say you have a class called Organism.  You can create a second class that is a child class of Organism called Animal. Animal will then inherit all methods and attributes of the Organism class in addition to the new methods of the Animal class. You could then create a class called Dog that would inherit from both the Animal class and the Organism class. One thing with Ruby though is you can only inherit from one class at a time meaning that you can't inherit from both Animal class and Robot class for your class Animatronic_Robot. Another tip is to always name your classes with a capital letter and use underscores instead of camelCase.  This is just Ruby convention. Also instance variables need to start with an AT sign (@).  Last but not least classes are all objects of the class Class. This is confusing and meta but it helps to understand it. So when you are definining a new class in Ruby you are really creating a new instance of the class Class. Cool, huh?</p>
+        </div>
+      </div>
+    </main>
+    <div id="socialBar">
+      <h2>Get in touch below</h2>
+      <ul>
+        <li><a href="https://twitter.com/danielkelley123"><img src="../imgs/socialIcons/twitter/twitter-64-black.png"></a></li>
+        <li><a href="https://plus.google.com/u/0/116356355707690454484/posts"><img src="../imgs/socialIcons/googleplus/googleplus-64-black.png"></a></li>
+        <li><a href="https://news.ycombinator.com/user?id=keyboardperro"><img src="../imgs/socialIcons/hackernews/hackernews-64-black.png"></a></li>
+        <li><a href="https://github.com/danimalkelley/"><img src="../imgs/socialIcons/github/github-64-black.png"></a></li>
+      </ul>
+    </div>
+    <footer>
+      Daniel Kelley - Dev Bootcamp - Desert Rabbits Cohort
+    </footer>
+  </div>
+</body>
+</html>
