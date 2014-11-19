@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="../stylesheets/main_stylesheet.css">
+    <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
+    <title>Daniel Kelley - Blocks, Procs, and Lambdas</title>
+</head>
+<body>
+  <div id="wrapper">
+    <nav>
+      <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../about.html">About</a></li>
+        <li><a id="currentPage" href="blog-home.html">Blog</a></li>
+        <li><a href="../projects.html">Projects</a></li>
+      </ul>
+    </nav>
+    <main>
+      <div class="content">
+        <div class="blogArticle">
+          <h2>Blocks, Procs, and Lambdas</h2>
+          <h4>November 18, 2014</h4>
+          <p>In this blog post I will discuss Blocks, Procs, and Lambdas, the three similar but distinct ways that Ruby allows you to pass commands to a method akin to the way you might pass arguments to a method. These features are known as closures in Computer Science.</p>
+          <h4>Blocks</h4>
+          <p>Blocks are the simplest closure in ruby and are good to use if you do not plan on reusing the code as they cannot be saved. I also recommend that you use the lowercase when writing "block" as block is just an instance of the Proc class which I will get to in a moment and is not a class in its own right.</p>
+          <h4>Procs</h4>
+          <p>Procs which is short for procedure. Differ from blocks in that they can are can be used more than once. Unlike blocks you can also pass multiple Procs to one method which can be handy. I recommend using uppercase when writing Proc.new because it is a real class in Ruby. </p>
+          <h4>Lambdas</h4>
+          <p>Unlike blocks and Procs, Lambdas act more or less like anonymous methods and therefore check the number of arguments passed in and do not return automatically but instead keep running.</p>
+
+        </div>
+      </div>
+    </main>
+    <div id="socialBar">
+      <h2>Get in touch below</h2>
+      <ul>
+        <li><a href="https://twitter.com/danielkelley123"><img src="../imgs/socialIcons/twitter/twitter-64-black.png"></a></li>
+        <li><a href="https://plus.google.com/u/0/116356355707690454484/posts"><img src="../imgs/socialIcons/googleplus/googleplus-64-black.png"></a></li>
+        <li><a href="https://news.ycombinator.com/user?id=keyboardperro"><img src="../imgs/socialIcons/hackernews/hackernews-64-black.png"></a></li>
+        <li><a href="https://github.com/danimalkelley/"><img src="../imgs/socialIcons/github/github-64-black.png"></a></li>
+      </ul>
+    </div>
+    <footer>
+      Daniel Kelley - Dev Bootcamp - Desert Rabbits Cohort
+    </footer>
+  </div>
+</body>
+</html>
