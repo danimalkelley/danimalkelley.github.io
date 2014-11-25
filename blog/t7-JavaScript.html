@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="../stylesheets/main_stylesheet.css">
+    <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
+    <title>Daniel Kelley - Javascript Objects compared with Ruby Hashes</title>
+</head>
+<body>
+  <div id="wrapper">
+    <nav>
+      <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../about.html">About</a></li>
+        <li><a id="currentPage" href="blog-home.html">Blog</a></li>
+        <li><a href="../projects.html">Projects</a></li>
+      </ul>
+    </nav>
+    <main>
+      <div class="content">
+        <div class="blogArticle">
+          <h2>JavaScript Objects compared with Ruby Hashes</h2>
+          <h4>November 24, 2014</h4>
+          <p>Today I'm going to write a little about the differences I see between Objects in JavaScript and Hashes in Ruby. As I've discussed in a previous post Ruby Hashes are a data structure which is made up of one or many key and value pairs. The key is the first piece of information and the second is the value corresponding to that key. These are great when you want to store information with labels.  See the code below for an example of a hash in Ruby with the name daniel_info. Note in the example that hashes can have arrays and other hashes nested within them. Also notice the symbol notation used for some of the keys in the hash.</p>
+
+          <pre class="prettyprint lang-ruby">
+            daniel_info = {
+            home_town: "Palo Alto",
+            full_name: "Daniel Kelley",
+            "age" => 25,
+            fav_food: "ice cream",
+            places_lived: ["Palo Alto", "Providence", "Phnom Penh"]
+            }
+
+            puts daniel_info[:full_name]      # puts "Daniel Kelley"
+            puts daniel_info["age"]           # puts 25
+            puts daniel_info.fav_food         # this does not work because Ruby thinks that fav_food is a method.
+          </pre>
+
+          <p>While you might be thinking that JavaScript Objects are likely more akin to Objects in Ruby, they are not. In fact, they are much closer to the Ruby Hashes we just reviewed. JavaScript objects, just like Ruby Hashes consist of key and value pairs where the keys in this case are called names and the value is called a value; together these form name-value pairs. JavaScript Objects are much less rigid than Ruby Hashes and can contain things called methods. These methods are functions that are stored in a name just like other values are. These methods can be called on the objects in which they are stored. Please see the code below for an example of a JavaScript Object.</p>
+
+          <pre class="prettyprint lang-javascript">
+            daniel_info = {
+            home_town: "Palo Alto",
+            full_name: "Daniel Kelley",
+            age: 25,
+            fav_food: "ice cream",
+            yearsTilIm100: function(age){
+              var til100 = 100 - this.age;
+              alert("I will be 100 years old in " + til100 + " years.");
+              }
+            };
+
+            console.log(daniel_info["full_name"]);      // "Daniel Kelley"
+            console.log(daniel_info.age);               // 25
+            daniel_info.yearsTilIm100();                // alerts "I will be 100 years old in 75 years."
+          </pre>
+
+          <p>At this point you might be asking yourself if JavaScript has classes because it is object oriented and everything. The short answer is 'no' JavaScript is what is known as a Prototype-based language which means that it achieves inheritance with something called, not surprisingly, prototypes. Unfortunately, I don't have time to discuss that more today but if you'd like to learn more about it <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Introduction_to_Object-Oriented_JavaScript">this explanation from Mozilla seems to be a good start.</a></p>
+
+        </div>
+      </div>
+    </main>
+    <div id="socialBar">
+      <h2>Get in touch below</h2>
+      <ul>
+        <li><a href="https://twitter.com/danielkelley123"><img src="../imgs/socialIcons/twitter/twitter-64-black.png"></a></li>
+        <li><a href="https://plus.google.com/u/0/116356355707690454484/posts"><img src="../imgs/socialIcons/googleplus/googleplus-64-black.png"></a></li>
+        <li><a href="https://news.ycombinator.com/user?id=keyboardperro"><img src="../imgs/socialIcons/hackernews/hackernews-64-black.png"></a></li>
+        <li><a href="https://github.com/danimalkelley/"><img src="../imgs/socialIcons/github/github-64-black.png"></a></li>
+      </ul>
+    </div>
+    <footer>
+      Daniel Kelley - Dev Bootcamp - Desert Rabbits Cohort
+    </footer>
+  </div>
+</body>
+</html>
