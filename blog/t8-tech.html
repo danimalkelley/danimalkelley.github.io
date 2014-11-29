@@ -25,16 +25,16 @@
           <p>OK, let's say you want to search a document for someone named Daniel but you aren't sure if they are referred to as Daniel, Danny, or Dan. Below is the Regular Expression you could use to search for any of the three and also return their last name.</p>
 
           <pre class="prettyprint lang-ruby">
-            (Daniel|Danny|Dan)\b\w+\s
+            (Daniel|Danny|Dan)/b/w+/s
           </pre>
 
-          <p>The first part of this expression "(Daniel | Danny | Dan)" looks for Daniel or (denoted by the "|") or Danny or Dan. The \b refers to a space after one word and before another. Next the \w looks for one character and when it has a + it looks for one or more characters. Finally the \s refers to a space.  Altogether the expression looks for Daniel or Danny or Dan followed by a space followed by one or more characters followed by another space. This expression would match with things like "Dan Smith", "Daniel Kelley", and "Danny Wellington"</p>
+          <p>The first part of this expression "(Daniel | Danny | Dan)" looks for Daniel or (denoted by the "|") or Danny or Dan. The /b refers to a space after one word and before another. Next the /w looks for one character and when it has a + it looks for one or more characters. Finally the /s refers to a space.  Altogether the expression looks for Daniel or Danny or Dan followed by a space followed by one or more characters followed by another space. This expression would match with things like "Dan Smith", "Daniel Kelley", and "Danny Wellington"</p>
 
           <h3>Example 2: An Address</h3>
-          <p>Now let's look for an address. Let's assume that the address starts with between 1 and 5 digits and then a space and then a one word street name and then either Ave or St and then a period. Note you need to put a \ before the . because the . by itself has its own meaning in regular expressions.</p>
+          <p>Now let's look for an address. Let's assume that the address starts with between 1 and 5 digits and then a space and then a one word street name and then either Ave or St and then a period. Note you need to put a / before the . because the . by itself has its own meaning in regular expressions.</p>
 
           <pre class="prettyprint lang-ruby">
-            \d{1,5}\s\w+\s(Ave|St)\.
+            /d{1,5}/s/w+/s(Ave|St)/.
           </pre>
 
           <h3>Using Regular Expressions in Ruby</h3>
