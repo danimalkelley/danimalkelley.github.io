@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="../stylesheets/main_stylesheet.css">
+    <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
+    <title>Daniel Kelley - Blog Home</title>
+</head>
+<body>
+  <div id="wrapper">
+    <nav>
+      <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../about.html">About</a></li>
+        <li><a id="currentPage" href="blog-home.html">Blog</a></li>
+        <li><a href="../projects.html">Projects</a></li>
+      </ul>
+    </nav>
+    <main>
+      <div class="content">
+        <div class="blogArticle">
+          <h2>Regular Expressions</h2>
+          <h4>November 27, 2014</h4>
+          <p>Regular Expressions (or RegEx for the cool kids...) are special expressions that make up a pattern that you can use to search for things. Let's say you want to search a text document for someone's name that you know starts with "dani" or you want to search for all addresses that have "Ave." in them or you want to search for 5-digit codes with "4" in the middle. You can use regular expressions for all of these!!  In this tutorial I will go through some examples of searches you could do with Regular Expressions, point you to a helpful cheat sheet, and explain how to use Regular Expressions in Ruby.</p>
+          <h3>Example 1: Daniel, Danny, or Dan</h3>
+          <p>OK, let's say you want to search a document for someone named Daniel but you aren't sure if they are referred to as Daniel, Danny, or Dan. Below is the Regular Expression you could use to search for any of the three and also return their last name.</p>
+
+          <pre class="prettyprint lang-ruby">
+            (Daniel|Danny|Dan)\b\w+\s
+          </pre>
+
+          <p>The first part of this expression "(Daniel | Danny | Dan)" looks for Daniel or (denoted by the "|") or Danny or Dan. The \b refers to a space after one word and before another. Next the \w looks for one character and when it has a + it looks for one or more characters. Finally the \s refers to a space.  Altogether the expression looks for Daniel or Danny or Dan followed by a space followed by one or more characters followed by another space. This expression would match with things like "Dan Smith", "Daniel Kelley", and "Danny Wellington"</p>
+
+          <h3>Example 2: An Address</h3>
+          <p>Now let's look for an address. Let's assume that the address starts with between 1 and 5 digits and then a space and then a one word street name and then either Ave or St and then a period. Note you need to put a \ before the . because the . by itself has its own meaning in regular expressions.</p>
+
+          <pre class="prettyprint lang-ruby">
+            \d{1,5}\s\w+\s(Ave|St)\.
+          </pre>
+
+          <h3>Using Regular Expressions in Ruby</h3>
+          <p>You can use Regular Expressions in many ways in Ruby but here I'll just provide a simple example using the #match() method and the "=~" for  comparison. In this example I will test to see if a string contains "Damiel" or "Damiel". #match() will return "#<MatchData "Daniel">" or "nil" and the =~ will return the index of the match or nil.</p>
+
+          <pre class="prettyprint lang-ruby">
+            p /Da[m-n]iel/.match("Daniel")
+            p /Da[m-n]iel/.match("Damiel")
+            p /Da[m-n]iel/.match("Daaiel")
+
+            p /Da[m-n]iel/ =~ "asdfDaniel"
+            p /Da[m-n]iel/ =~ "asdfasdfaDamiel"
+            p /Da[m-n]iel/ =~ "asdfasdfaDaaiel"
+          </pre>
+
+        </div>
+      </div>
+    </main>
+    <div id="socialBar">
+      <h2>Get in touch below</h2>
+      <ul>
+        <li><a href="https://twitter.com/danielkelley123"><img src="../imgs/socialIcons/twitter/twitter-64-black.png"></a></li>
+        <li><a href="https://plus.google.com/u/0/116356355707690454484/posts"><img src="../imgs/socialIcons/googleplus/googleplus-64-black.png"></a></li>
+        <li><a href="https://news.ycombinator.com/user?id=keyboardperro"><img src="../imgs/socialIcons/hackernews/hackernews-64-black.png"></a></li>
+        <li><a href="https://github.com/danimalkelley/"><img src="../imgs/socialIcons/github/github-64-black.png"></a></li>
+      </ul>
+    </div>
+    <footer>
+      Daniel Kelley - Dev Bootcamp - Desert Rabbits Cohort
+    </footer>
+  </div>
+</body>
+</html>
